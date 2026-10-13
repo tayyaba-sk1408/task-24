@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-container">
+    <header>
+      <p class="eyebrow">MINI GAME</p>
+      <h1>Rock Paper Scissors</h1>
+      <p class="subtitle">Choose your move and challenge the computer.</p>
+    </header>
+
+    <section class="scoreboard">
+      <div class="score-card">
+        <span class="score-label">YOU</span>
+        <strong id="player-score">0</strong>
+      </div>
+      <span class="score-divider">:</span>
+      <div class="score-card">
+        <span class="score-label">COMPUTER</span>
+        <strong id="computer-score">0</strong>
+      </div>
+    </section>
+
+    <section class="game-panel">
+      <p class="section-label">MAKE YOUR CHOICE</p>
+
+      <div class="choices">
+        <button class="choice" data-choice="rock">
+          <span class="choice-emoji">✊</span>
+          <span>Rock</span>
+        </button>
+        <button class="choice" data-choice="paper">
+          <span class="choice-emoji">✋</span>
+          <span>Paper</span>
+        </button>
+        <button class="choice" data-choice="scissors">
+          <span class="choice-emoji">✌️</span>
+          <span>Scissors</span>
+        </button>
+      </div>
+
+      <div class="result-card" aria-live="polite">
+        <p id="result-title">Ready to play?</p>
+        <p id="result-message">Select Rock, Paper, or Scissors to start a round.</p>
+      </div>
+
+      <div class="moves">
+        <div>
+          <span class="move-label">YOUR MOVE</span>
+          <strong id="player-move">—</strong>
+        </div>
+        <div>
+          <span class="move-label">COMPUTER'S MOVE</span>
+          <strong id="computer-move">—</strong>
+        </div>
+      </div>
+
+      <button id="reset-button" class="reset-button">Reset Score</button>
+    </section>
+
+    <footer>Built with HTML, CSS and JavaScript</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

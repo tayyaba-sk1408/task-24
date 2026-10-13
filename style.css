@@ -1,0 +1,269 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --background: #0b1020;
+  --panel: #141b2f;
+  --panel-light: #1b2540;
+  --text: #f5f7ff;
+  --muted: #a8b2cc;
+  --accent: #8b7cff;
+  --accent-light: #b7afff;
+  --green: #48d6a0;
+  --red: #ff7185;
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px 16px;
+  background: radial-gradient(circle at top, #22264a 0, var(--background) 48%);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+.game-container {
+  width: min(100%, 680px);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.eyebrow,
+.section-label,
+.score-label,
+.move-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  font-weight: 800;
+}
+
+.eyebrow {
+  color: var(--accent-light);
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  letter-spacing: -0.06em;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+.scoreboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.score-card {
+  width: 145px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(20, 27, 47, 0.85);
+  text-align: center;
+}
+
+.score-label,
+.move-label {
+  display: block;
+  color: var(--muted);
+}
+
+.score-card strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 2.2rem;
+}
+
+.score-divider {
+  color: var(--muted);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.game-panel {
+  padding: clamp(20px, 5vw, 34px);
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  background: linear-gradient(145deg, #1b2540, #101628);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+.section-label {
+  text-align: center;
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 10px;
+  color: var(--text);
+  background: var(--panel-light);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.choice:hover,
+.choice:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  background: #293456;
+  outline: none;
+}
+
+.choice:active {
+  transform: scale(0.97);
+}
+
+.choice-emoji {
+  font-size: clamp(2rem, 7vw, 3rem);
+}
+
+.choice span:last-child {
+  font-weight: 600;
+}
+
+.result-card {
+  min-height: 116px;
+  display: grid;
+  align-content: center;
+  margin-top: 22px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(7, 11, 24, 0.45);
+}
+
+#result-title {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+#result-message {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.result-card.win #result-title {
+  color: var(--green);
+}
+
+.result-card.lose #result-title {
+  color: var(--red);
+}
+
+.result-card.draw #result-title {
+  color: var(--accent-light);
+}
+
+.moves {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.moves > div {
+  padding: 15px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.move-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+}
+
+.moves strong {
+  display: block;
+  margin-top: 8px;
+  text-transform: capitalize;
+}
+
+.reset-button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px 18px;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 180ms ease, border-color 180ms ease;
+}
+
+.reset-button:hover,
+.reset-button:focus-visible {
+  background: var(--panel-light);
+  border-color: var(--accent);
+  outline: none;
+}
+
+footer {
+  margin-top: 22px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 440px) {
+  .choices {
+    gap: 8px;
+  }
+
+  .choice {
+    padding: 16px 6px;
+  }
+
+  .scoreboard {
+    gap: 10px;
+  }
+
+  .score-card {
+    width: 125px;
+  }
+
+  .game-panel {
+    border-radius: 20px;
+  }
+}
